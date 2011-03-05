@@ -264,7 +264,7 @@ class Task(models.Model):
 
     def snapshot(self):
         """
-        Creates a new TaskSnapshot from the most recent bug tracke data. Returns
+        Creates a new TaskSnapshot from the most recent bug tracker data. Returns
         the new snapshot if successful, None otherwise.
         """
         def lookup_user(email):
