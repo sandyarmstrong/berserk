@@ -21,9 +21,15 @@ To install:
    tracker you want to use, and if you plan to use timeline, your email
    settings.
 
- * python manage.py syncdb
+ * python manage.py syncdb && python manage.py migrate
+    - If you are testing locally with sqlite, the migrations are known to fail.
+      In this case, disable south and fake migrations by using this command:
 
- * python manage.py migrate
+      python manage.py syncdb --all && python manage.py migrate --fake
+
+      If you keep this database between migrations, you will need to perform
+      any new migrations manually. Using mysql even for testing is usually
+      easier.
 
  * Set up berserk in your webserver or for development:
 
